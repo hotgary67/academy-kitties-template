@@ -27,13 +27,6 @@
     <div align="center">
       <h1 class="c-white">Kitties-Factory</h1>
       <p class="c-white">Create your custom Kitty</p>
-
-    <button type="button" id="randomkitty">Kitty Randomizer Button Special</button>
-
-
-<!--IK moet de functie randomHeadColor aanmaken
-https://www.tutorialrepublic.com/faq/how-to-call-multiple-javascript-functions-in-a-single-onclick-event.php-->
-
     </div>
     <div class="row">
       <div class="col-lg-4 catBox m-2 light-b-shadow">
@@ -186,8 +179,6 @@ https://www.tutorialrepublic.com/faq/how-to-call-multiple-javascript-functions-i
             <!--  <span id="dnaspecial"></span>-->
           </b>
 </div>
-
-
 </div>
 </div>
 
@@ -195,119 +186,95 @@ https://www.tutorialrepublic.com/faq/how-to-call-multiple-javascript-functions-i
 <div class="col-lg-7 cattributes m-2 light-b-shadow">
 
 
-
         <!-- Cat colors -->
         <div id="catColors">
-          <div class="row">
-
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Colors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Shapes & Effects</a>
-              </li>
-            </ul>
-
+          <div class="form-group">
+            <label for="formControlRange"><b>Head & body</b>
+              <div class="badge badge-dark ml-2" id="headcode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="bodycolor">
+          </div>
+          <div class="form-group">
+            <label for="formControlRange"><b>Hat</b>
+              <div class="badge badge-dark ml-2" id="hatcode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="hatcolor">
+          </div>
+          <div class="form-group">
+            <label for="formControlRange"><b>Eyes</b>
+              <div class="badge badge-dark ml-2" id="eyescode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="eyescolor">
           </div>
 
-    <div class="tab-content" id="myTabContent">
+          <div class="form-group">
+            <label for="formControlRange"><b>Ears</b>
+              <div class="badge badge-dark ml-2" id="earcode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="earcolor">
+          </div>
+          <div class="form-group">
+            <label for="formControlRange"><b>Arms & Legs</b>
+              <div class="badge badge-dark ml-2" id="armslegscode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="armslegscolor">
+          </div>
+          <div class="form-group">
+            <label for="formControlRange"><b>Belly</b>
+              <div class="badge badge-dark ml-2" id="bellycode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="bellycolor">
+          </div>
+
+          <div class="form-group">
+            <label for="formControlRange"><b>Tail</b>
+              <div class="badge badge-dark ml-2" id="tailcode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="tailcolor">
+          </div>
+
+          <div class="form-group">
+            <label for="formControlRange"><b>Trunk</b>
+              <div class="badge badge-dark ml-2" id="trunkcode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="trunkcolor">
+          </div>
+
+          <div class="form-group">
+            <label for="formControlRange"><b>Vase</b>
+              <div class="badge badge-dark ml-2" id="vasecode"></div>
+            </label>
+            <input type="range" min="10" max="98" class="form-control-range" id="vasecolor">
+          </div>
+
+          <div class="form-group">
+            <label for="formControlRange"><b>Eye Shape</b>
+              <div class="badge badge-dark ml-2" id="eyeName"></div>
+            </label>
+            <input type="range" min="1" max="6" class="form-control-range" id="eyeshape">
+          </div>
 
 
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <div class="form-group">
+            <label for="formControlRange"><b>Nail Shape</b>
+              <div class="badge badge-dark ml-2" id="nailName"></div>
+            </label>
+            <input type="range" min="1" max="5" class="form-control-range" id="decorationnail">
+          </div>
 
-  <div class="form-group">
-    <label for="formControlRange"><b>Head & body</b>
-      <div class="badge badge-dark ml-2" id="headcode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="bodycolor">
-  </div>
-  <div class="form-group">
-    <label for="formControlRange"><b>Hat</b>
-      <div class="badge badge-dark ml-2" id="hatcode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="hatcolor">
-  </div>
-  <div class="form-group">
-    <label for="formControlRange"><b>Eyes</b>
-      <div class="badge badge-dark ml-2" id="eyescode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="eyescolor">
-  </div>
+          <div class="form-group">
+            <label for="formControlRange"><b>Wings</b>
+              <div class="badge badge-dark ml-2" id="wingNames"></div>
+            </label>
+            <input type="range" min="1" max="5" class="form-control-range" id="wingshapedec">
+          </div>
 
-  <div class="form-group">
-    <label for="formControlRange"><b>Ears</b>
-      <div class="badge badge-dark ml-2" id="earcode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="earcolor">
-  </div>
-  <div class="form-group">
-    <label for="formControlRange"><b>Arms & Legs</b>
-      <div class="badge badge-dark ml-2" id="armslegscode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="armslegscolor">
-  </div>
-  <div class="form-group">
-    <label for="formControlRange"><b>Belly</b>
-      <div class="badge badge-dark ml-2" id="bellycode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="bellycolor">
-  </div>
-
-  <div class="form-group">
-    <label for="formControlRange"><b>Tail</b>
-      <div class="badge badge-dark ml-2" id="tailcode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="tailcolor">
-  </div>
-
-  <div class="form-group">
-    <label for="formControlRange"><b>Trunk</b>
-      <div class="badge badge-dark ml-2" id="trunkcode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="trunkcolor">
-  </div>
-
-  <div class="form-group">
-    <label for="formControlRange"><b>Vase</b>
-      <div class="badge badge-dark ml-2" id="vasecode"></div>
-    </label>
-    <input type="range" min="10" max="100" class="form-control-range" id="vasecolor">
-  </div>
-</div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">    <div class="form-group">
-        <label for="formControlRange"><b>Eye Shape</b>
-          <div class="badge badge-dark ml-2" id="eyeName"></div>
-        </label>
-        <input type="range" min="1" max="6" class="form-control-range" id="eyeshape">
-      </div>
-
-
-      <div class="form-group">
-        <label for="formControlRange"><b>Nail Shape</b>
-          <div class="badge badge-dark ml-2" id="nailName"></div>
-        </label>
-        <input type="range" min="1" max="5" class="form-control-range" id="decorationnail">
-      </div>
-
-      <div class="form-group">
-        <label for="formControlRange"><b>Wings</b>
-          <div class="badge badge-dark ml-2" id="wingNames"></div>
-        </label>
-        <input type="range" min="1" max="5" class="form-control-range" id="wingshapedec">
-      </div>
-
-      <div class="form-group">
-        <label for="formControlRange"><b>Animation</b>
-          <div class="badge badge-dark ml-2" id="animationName"></div>
-        </label>
-        <input type="range" min="1" max="5" class="form-control-range" id="animation">
-      </div></div>
-
-</div>
-
-
-
+          <div class="form-group">
+            <label for="formControlRange"><b>Animation</b>
+              <div class="badge badge-dark ml-2" id="animationName"></div>
+            </label>
+            <input type="range" min="1" max="4" class="form-control-range" id="animation">
+          </div>
 
         </div>
 
@@ -329,10 +296,5 @@ https://www.tutorialrepublic.com/faq/how-to-call-multiple-javascript-functions-i
 <script src="assets/js/colors.js"></script>
 <script src="assets/js/catSettings.js"></script>
 <script src="assets/js/catFactory.js"></script>
-<script src="assets/js/siteFunctionality.js"></script>
-
-
-
-
 
 </html>

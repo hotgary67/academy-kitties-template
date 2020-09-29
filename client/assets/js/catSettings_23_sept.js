@@ -128,10 +128,8 @@ $('#tailcolor').change(()=>{
 
 $('#trunkcolor').change(()=>{
     var colorVal = $('#trunkcolor').val()
-    //var colorVal2 = $('#wingcolor').val()
     trunkColor(colors[colorVal],colorVal)
-  //  trunkColor(color2s[colorVal2],colorVal2)
-//    decorationWings(colors[colorVal],colorVal)
+    decorationWings(colors[colorVal],colorVal)
 
 })
 
