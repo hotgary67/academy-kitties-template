@@ -21,7 +21,7 @@ interface IERC721 {
     /*
      * @dev Returns the total number of tokens in circulation.
      */
-    //function totalSupply() external view returns (uint256 total);
+    function totalSupply() external view returns (uint256 total);
 
     /*
      * @dev Returns the name of the token.
