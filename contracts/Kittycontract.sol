@@ -112,7 +112,7 @@ contract Kittycontract is IERC721, Ownable {
         tokenOwner[tokenId] = newOwner;
 
         totalTokenCountOwner[to] ++;
-;       totalTokenCountOwner[msg.sender] --;
+       totalTokenCountOwner[msg.sender] --;
     
         emit Transfer(msg.sender, newOwner, tokenId);
     }
