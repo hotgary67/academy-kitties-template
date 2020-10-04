@@ -41,8 +41,8 @@ contract Kittycontract is IERC721, Ownable {
         owner = msg.sender;
         
        _createKitty(0, 0, 0, _genes, owner);
-
-       //return  _genes
+   //return  _genes
+    
 
 }
 
@@ -72,9 +72,21 @@ contract Kittycontract is IERC721, Ownable {
     }
     
 
-    function getKitty(uint256 index) public view returns(Kitty memory) {
-         return Kitties[index];
+function getKittytest(uint256 index) public view returns(
+        uint256 _genes,
+        uint256 _birthTime,
+        uint256 _mumId,
+        uint256 _dadId,
+        uint256 _generation
+     )        
+
+        
+         {
+
+         return (Kitties[index].genes, Kitties[index].birthTime, Kitties[index].mumId, Kitties[index].dadId, Kitties[index].generation);
 }
+
+  
     function balanceOf(address owner) external view returns (uint256 balance) {
         return totalTokenCountOwner[owner];
     }
@@ -112,7 +124,8 @@ contract Kittycontract is IERC721, Ownable {
         tokenOwner[tokenId] = newOwner;
 
         totalTokenCountOwner[to] ++;
-       totalTokenCountOwner[msg.sender] --;
+
+        totalTokenCountOwner[msg.sender] --;
     
         emit Transfer(msg.sender, newOwner, tokenId);
     }
