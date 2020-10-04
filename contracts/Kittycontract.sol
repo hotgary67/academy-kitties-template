@@ -72,7 +72,7 @@ contract Kittycontract is IERC721, Ownable {
     }
     
 
-function getKitty(uint256 index) public view returns(
+function getKitty(uint256 tokenId) public view returns(
         uint256 _genes,
         uint256 _birthTime,
         uint256 _mumId,
@@ -83,7 +83,7 @@ function getKitty(uint256 index) public view returns(
         
          {
 
-         return (Kitties[index].genes, Kitties[index].birthTime, Kitties[index].mumId, Kitties[index].dadId, Kitties[index].generation);
+         return (Kitties[tokenId].genes, Kitties[tokenId].birthTime, Kitties[tokenId].mumId, Kitties[tokenId].dadId, Kitties[tokenId].generation);
 }
 
   
