@@ -1,7 +1,7 @@
 var web3 = new Web3(Web3.givenProvider);
 var instance;
 var user;
-var contractAddress = "0x820573CE51Bd3eBE6B140e71Ae0991E9B07E31eD";
+var contractAddress = "0x7d4Bb53f915Fb9CB2676091ea37c7d47c3054cfe";
 
 $(document).ready(function () {
   window.ethereum.enable().then(function (accounts) {
@@ -12,9 +12,11 @@ $(document).ready(function () {
   })
 })
 function sendKittyToBlockChain() {
-  let dnaStr = getDna();
-  instance.methods.createKittyGen0(dnaStr).send({}, function (error, txHash) {
+//  let dnaStr = getDna();
+  let dnaStr = "1111";
+  instance.methods.createKittyGen0(dnaStr).send({}, function (err, txHash) {
     if (err) console.log(err);
+
     else 
       console.log(txHash);
   
