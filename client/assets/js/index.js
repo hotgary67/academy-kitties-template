@@ -5,23 +5,22 @@ var contractAddress = "0x820573CE51Bd3eBE6B140e71Ae0991E9B07E31eD";
 
 $(document).ready(function () {
   window.ethereum.enable().then(function (accounts) {
-    instance = new web3.eth.Contract(abi, contractAddress, {
-      from: accounts[0],
-    });
+    instance = new web3.eth.Contract(abi, contractAddress, {from: accounts[0]})
     user = accounts[0];
-  });
-});
-  // console.log(instance);
 
-  function sendKittyToBlockChain() {
-    dnaStr = getDna();
-    instance.methods.createKittyGen0(dnaStr).send({}, function (error, txHash) {
-      if (err) console.log(err);
-      else {
-        console.log(txHash);
-      }
-    });
-  }
+  console.log(instance);
+  })
+})
+function sendKittyToBlockChain() {
+  let dnaStr = getDna();
+  instance.methods.createKittyGen0(dnaStr).send({}, function (error, txHash) {
+    if (err) console.log(err);
+    else 
+      console.log(txHash);
+  
+  });
+
+}
   //methods zijn te vinden door in de console te kijken
   //send wordt gebruikt als setter functie met callbacks
 
