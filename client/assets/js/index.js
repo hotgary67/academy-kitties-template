@@ -2,83 +2,92 @@ var web3 = new Web3(Web3.givenProvider);
 var instance;
 var user;
 var contractAddress = "0x6D670b16BB8641801b3830E98b11CBA29EF3d107";
-var myContract =  new web3.eth.Contract(abi, contractAddress);
+var myContract = new web3.eth.Contract(abi, contractAddress);
 console.log(myContract);
-
 
 $(document).ready(function () {
   window.ethereum.enable().then(function (accounts) {
-    instance = new web3.eth.Contract(abi, contractAddress, {from: accounts[0]})
+    instance = new web3.eth.Contract(abi, contractAddress, {
+      from: accounts[0],
+    });
     user = accounts[0];
 
-  console.log(instance);
-  
-  })
-})
+    console.log(instance);
+  });
+});
 function sendKittyToBlockChain() {
-//  let dnaStr = getDna();
-  let dnaStr = "1111";
+  let dnaStr = getDna();
+  console.log(dnaStr);
+
   instance.methods.createKittyGen0(dnaStr).send({}, function (err, txHash) {
     if (err) console.log(err);
-
-    else 
-      console.log(txHash);
-  
+    else console.log(txHash);
   });
 
-  bornKittyPropertiesArray = []
-  myContract.events.Birth ({
-    // Can use from block 0 but returns all previous births
-    //fromBlock: 0
-   fromBlock: 'latest',
-   toBlock: 'latest'
-  }, function(error, result) {
-    if (!error) {
-      
-      console.log(result, "Kitty has been born");
-      console.log(
-        result.returnValues.kittenId,
-        result.returnValues.generation,
-        result.returnValues.genes,
-        result.returnValues.MumId,
-        result.returnValues.dadId,
-        result.returnValues.owner);
+  bornKittyPropertiesArray = [];
+  myContract.events.Birth(
+    {
+      // Can use from block 0 but returns all previous births
+      //fromBlock: 0
+      fromBlock: "latest",
+      toBlock: "latest",
+    },
+    function (error, result) {
+      if (!error) {
+        console.log(result, "Kitty has been born");
+        console.log(
+          result.returnValues.kittenId,
+          result.returnValues.generation,
+          result.returnValues.genes,
+          result.returnValues.MumId,
+          result.returnValues.dadId,
+          result.returnValues.owner
+        );
 
-      alert('Your Kitty is born');
-      bornKittyPropertiesArray.push(
-        result.returnValues.kittenId,
-        result.returnValues.generation,
-        result.returnValues.genes,
-        result.returnValues.MumId,
-        result.returnValues.dadId,
-        result.returnValues.owner);
-        
-        $("#bornCatSpecifications").append('Kitten Id:' + " " + result.returnValues.kittenId  +'<br>');
-        $("#bornCatSpecifications").append('Generation:' + " " + result.returnValues.generation  +'<br>');
-        $("#bornCatSpecifications").append('Genes:' + " " + result.returnValues.genes +'<br>');
-        $("#bornCatSpecifications").append('Mum ID:' + " " + result.returnValues.MumId +'<br>');
-        $("#bornCatSpecifications").append('Dad ID:' + " " + result.returnValues.dadId +'<br>');
-        $("#bornCatSpecifications").append('Owner Address:' + " " + result.returnValues.owner);
+        alert("Your Kitty is born");
+        bornKittyPropertiesArray.push(
+          result.returnValues.kittenId,
+          result.returnValues.generation,
+          result.returnValues.genes,
+          result.returnValues.MumId,
+          result.returnValues.dadId,
+          result.returnValues.owner
+        );
 
-
-    } else {
- 
-      console.log(error);
+        $("#bornCatSpecifications").append(
+          "Kitten Id:" + " " + result.returnValues.kittenId + "<br>"
+        );
+        $("#bornCatSpecifications").append(
+          "Generation:" + " " + result.returnValues.generation + "<br>"
+        );
+        $("#bornCatSpecifications").append(
+          "Genes:" + " " + result.returnValues.genes + "<br>"
+        );
+        $("#bornCatSpecifications").append(
+          "Mum ID:" + " " + result.returnValues.MumId + "<br>"
+        );
+        $("#bornCatSpecifications").append(
+          "Dad ID:" + " " + result.returnValues.dadId + "<br>"
+        );
+        $("#bornCatSpecifications").append(
+          "Owner Address:" + " " + result.returnValues.owner
+        );
+      } else {
+        console.log(error);
+      }
     }
-  }) 
+  );
   console.log(bornKittyPropertiesArray);
 
-
-
-bornKittyPropertiesArray.forEach((value) => {
-  document.querySelector(".bornCatSpecifications").innerHTML += `<span>${value}</span>`;
-});
-
+  bornKittyPropertiesArray.forEach((value) => {
+    document.querySelector(
+      ".bornCatSpecifications"
+    ).innerHTML += `<span>${value}</span>`;
+  });
 }
 
- //methods zijn te vinden door in de console te kijken
-  //send wordt gebruikt als setter functie met callbacks
-
+//methods zijn te vinden door in de console te kijken
+//send wordt gebruikt als setter functie met callbacks
 
 /*
 
